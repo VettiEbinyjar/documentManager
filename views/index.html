@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Hello ,please upload a files with desired tags</h3>
+<form action="/api/document/upload" method="POST" enctype="multipart/form-data">
+  <label for="myfile">Select files:</label>
+  <br>
+  <br>
+  <input type="file" id="myfile" name="file" multiple>
+  <br>
+  <br>
+  <label for="tags">Tags for above file :</label>
+  <p>please enter tags as comma (,) separated </p>
+  <br>
+  <textarea type="input" rows="4" cols="50" name="tags" value="" ></textarea>
+    <input type="submit"/>
+    <br>
+    <br>
+
+</form>
+<h3>Hello ,please enter a tags to get desired files</h3>  
+<p>please enter tags as comma (,) separated </p>
+<form action="/api/document/retrive" method="GET">
+  <textarea type="input" rows="4" cols="50" name="tags" value="" ></textarea>
+  <input type="submit"  />
+</form> 
+</body>
+</html>

@@ -3,7 +3,6 @@ let mongoose = require('mongoose');
 const ip = require("ip");
 const fs = require("fs")
 const path = require("path")
-const chalk = require("chalk");
 const bodyParser = require("body-parser");
 const static = require('serve-static')
 const documentRouter = require('./routes/documenRouter');

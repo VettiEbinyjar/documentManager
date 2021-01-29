@@ -34,12 +34,5 @@ app.use('/', (request, response) => {
 });
 
 app.listen(port, () => {
-    console.log(
-        chalk.blue(`Server running on: `),
-        chalk.yellowBright(`${"http://"}${ip.address()}:${port}`)
-    );
-    console.log(
-        chalk.blue(`You can also use: `),
-        chalk.yellowBright(`${"http://"}localhost:${port}`)
-    );
+    console.log(`You can also use: `,`${"http://"}${ip.address()}:${port}`);
 });

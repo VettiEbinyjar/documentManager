@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "managing documents and files with proper tags and getting that files easily by that tags",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+"scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VettiEbinyjar/documentManager.git"

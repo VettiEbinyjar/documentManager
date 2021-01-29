@@ -11,7 +11,7 @@ documentConrtroller.uploadDocuments = async (reqData) => {
     let listOfFiles = await documents.map((oneDoc) => {
         let newPath = path.resolve(__dirname, "..", "public", shortid.generate() + oneDoc.name)
 
-        fileHandler.renameFile(oneDoc.path, newPath)
+        // fileHandler.renameFile(oneDoc.path, newPath)
         let doc = {
             fileName: oneDoc.name,
             fileType: oneDoc.type,

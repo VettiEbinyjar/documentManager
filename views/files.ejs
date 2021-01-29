@@ -10,14 +10,11 @@
     </style>
 <body>
 <div class="filedata">
-  <h5>please click the blue link to download or view</h5>
+  <!-- <h5>please click the blue link to download or view</h5> -->
 <ol>
   <% result.forEach(function(data){ %>
     <li>
-      <h3>
-        fileName :
-      <a href="/static/<%= data.filePath.split('/')[data.filePath.split('/').length-1] %>">  <%= data.fileName %> </a>
-    </h3>
+      <h3>fileName : <%= data.fileName %></h3>
       <h3>fileType : <%= data.fileType %></h3>
       <h3>fileTags : <%= data.tags %></h3>
   <% });%>

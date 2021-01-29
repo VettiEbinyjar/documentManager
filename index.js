@@ -10,8 +10,9 @@ const formidable = require('./utils/formParser').formidable;
 require("dotenv").config();
 const port = process.env.PORT || 8000;
 if (!fs.existsSync(`./public`)) fs.mkdirSync(`./public`);
+let MONGODB_URL=`${process.env.DATABASE_DIALECT}://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`
 
-mongoose.connect(process.env.MONGODB_URL || `${process.env.DATABASE_DIALECT}://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`,{
+mongoose.connect(`mongodb://localhost/${process.env.DATABASE_NAME}`|| MONGODB_URL , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

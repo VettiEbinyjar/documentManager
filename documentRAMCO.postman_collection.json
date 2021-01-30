@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "de671529-46c4-4723-8bc0-8a2fe3623f50",
+		"name": "documentRAMCO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "upload Files with Tags",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [
+								"/home/vetti/tekwork/thumbnail.png",
+								"/home/vetti/tekwork/preview.png"
+							]
+						},
+						{
+							"key": "tags",
+							"value": "JGH,HGJ,GJH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://documenmanager.herokuapp.com/api/document/upload",
+					"protocol": "https",
+					"host": [
+						"documenmanager",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"document",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "upload Files with Tags",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [
+										"/home/vetti/tekwork/thumbnail.png",
+										"/home/vetti/tekwork/preview.png"
+									]
+								},
+								{
+									"key": "tags",
+									"value": "JGH,HGJ,GJH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://documenmanager.herokuapp.com/api/document/upload",
+							"protocol": "https",
+							"host": [
+								"documenmanager",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"document",
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1306"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"51a-Ths4E98vcnAOdKeMMl6YYz0ZqMQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 08:16:46 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html>\n    <style>    \n    div.filedata {\n      position: absolute;\n      right: 400px; \n      width: 300px; \n\n    } \n    </style>\n    <body>\n        <div class=\"filedata\">\n            <!-- <h5>please click the blue link to download or view</h5> -->\n            <ol>\n                <li>\n                    <h3>fileName : thumbnail.png</h3>\n                    <h3>fileType : image/png</h3>\n                    <h3>fileTags : JGH,HGJ,GJH</h3>\n                    <li>\n                        <h3>fileName : preview.png</h3>\n                        <h3>fileType : image/png</h3>\n                        <h3>fileTags : JGH,HGJ,GJH</h3>\n                    </ol>\n                </div>\n                <h3>Hello ,please upload a files with desired tags</h3>\n                <form action=\"/api/document/upload\" method=\"POST\" enctype=\"multipart/form-data\">\n                    <label for=\"myfile\">Select files:</label>\n                    <br>\n                    <br>\n                    <input type=\"file\" id=\"myfile\" name=\"file\" multiple>\n                    <br>\n                    <br>\n                    <label for=\"tags\">Tags for above file :</label>\n                    <p>please enter tags as comma (,) separated </p>\n                    <br>\n                    <textarea type=\"input\" rows=\"4\" cols=\"50\" name=\"tags\" value=\"\" ></textarea>\n                    <input type=\"submit\"/>\n                    <br>\n                    <br>\n\n\n                </form>\n                <h3>Hello ,please enter a tags to get desired files</h3>\n                <p>please enter tags as comma (,) separated </p>\n                <form action=\"/api/document/retrive\" method=\"GET\">\n                    <textarea type=\"input\" rows=\"4\" cols=\"50\" name=\"tags\" value=\"\" ></textarea>\n                    <input type=\"submit\"  />\n                </form>\n            </body>\n        </html>"
+				}
+			]
+		},
+		{
+			"name": "retrieve files with tags",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://documenmanager.herokuapp.com/api/document/retrive?tags=JGH",
+					"protocol": "https",
+					"host": [
+						"documenmanager",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"document",
+						"retrive"
+					],
+					"query": [
+						{
+							"key": "tags",
+							"value": "JGH"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "retrieve files with tags",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://documenmanager.herokuapp.com/api/document/retrive?tags=JGH",
+							"protocol": "https",
+							"host": [
+								"documenmanager",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"document",
+								"retrive"
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "JGH"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1883"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"75b-7GpwGJpuZSoEyvPtPfea5JK5k2I\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 08:19:08 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html>\n    <style>    \n    div.filedata {\n      position: absolute;\n      right: 400px; \n      width: 300px; \n\n    } \n    </style>\n    <body>\n        <div class=\"filedata\">\n            <!-- <h5>please click the blue link to download or view</h5> -->\n            <ol>\n                <li>\n                    <h3>fileName : Screenshot from 2021-01-21 11-30-48.png</h3>\n                    <h3>fileType : image/png</h3>\n                    <h3>fileTags : JGH</h3>\n                    <li>\n                        <h3>fileName : __ BillDesk Payment Gateway __.pdf</h3>\n                        <h3>fileType : application/pdf</h3>\n                        <h3>fileTags : JGH</h3>\n                        <li>\n                            <h3>fileName : Screenshot from 2021-01-19 22-58-00.png</h3>\n                            <h3>fileType : image/png</h3>\n                            <h3>fileTags : JGH</h3>\n                            <li>\n                                <h3>fileName : Screenshot from 2021-01-21 11-30-48.png</h3>\n                                <h3>fileType : image/png</h3>\n                                <h3>fileTags : JGH</h3>\n                                <li>\n                                    <h3>fileName : thumbnail.png</h3>\n                                    <h3>fileType : image/png</h3>\n                                    <h3>fileTags : JGH,HGJ,GJH</h3>\n                                    <li>\n                                        <h3>fileName : preview.png</h3>\n                                        <h3>fileType : image/png</h3>\n                                        <h3>fileTags : JGH,HGJ,GJH</h3>\n                                    </ol>\n                                </div>\n                                <h3>Hello ,please upload a files with desired tags</h3>\n                                <form action=\"/api/document/upload\" method=\"POST\" enctype=\"multipart/form-data\">\n                                    <label for=\"myfile\">Select files:</label>\n                                    <br>\n                                    <br>\n                                    <input type=\"file\" id=\"myfile\" name=\"file\" multiple>\n                                    <br>\n                                    <br>\n                                    <label for=\"tags\">Tags for above file :</label>\n                                    <p>please enter tags as comma (,) separated </p>\n                                    <br>\n                                    <textarea type=\"input\" rows=\"4\" cols=\"50\" name=\"tags\" value=\"\" ></textarea>\n                                    <input type=\"submit\"/>\n                                    <br>\n                                    <br>\n\n\n                                </form>\n                                <h3>Hello ,please enter a tags to get desired files</h3>\n                                <p>please enter tags as comma (,) separated </p>\n                                <form action=\"/api/document/retrive\" method=\"GET\">\n                                    <textarea type=\"input\" rows=\"4\" cols=\"50\" name=\"tags\" value=\"\" ></textarea>\n                                    <input type=\"submit\"  />\n                                </form>\n                            </body>\n                        </html>"
+				}
+			]
+		}
+	]
+}
